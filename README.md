@@ -1,4 +1,4 @@
-# CodingNomads Java Fundamentals by Zane
+# CodingNomads Java Fundamentals by Zane S
 
 This project contains a variety of textbook examples and labs focused on Java labs_examples.fundamentals.
 
