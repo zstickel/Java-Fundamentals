@@ -18,8 +18,42 @@ Fundamentals Exercise 1: CLI
          b. Use $ cat print contents of file
          c. Use $ grep to search for a word inside file
 
-Example Output:
-    1. cd ~/Documents/CodingNomads/
-    2. mkdir Terminal_testing
-    3. //...
+Output:
+ zanestickel@Zanes-Mac-Studio online-java-fundamentals % ls
+ README.md			out
+ online-java-fundamentals.iml	src
+ zanestickel@Zanes-Mac-Studio online-java-fundamentals % mkdir Terminal_testing
+ zanestickel@Zanes-Mac-Studio online-java-fundamentals % cd Terminal_testing
+ zanestickel@Zanes-Mac-Studio Terminal_testing % touch first.txt second.txt third.txt
+ zanestickel@Zanes-Mac-Studio Terminal_testing % pwd
+ /Users/zanestickel/Documents/CodingNomads/labs/online-java-fundamentals/Terminal_testing
+ zanestickel@Zanes-Mac-Studio Terminal_testing % ls
+ first.txt	second.txt	third.txt
+ zanestickel@Zanes-Mac-Studio Terminal_testing % mkdir newfolder
+ zanestickel@Zanes-Mac-Studio Terminal_testing % cp first.txt ./newfolder
+ zanestickel@Zanes-Mac-Studio Terminal_testing % cd newfolder
+ zanestickel@Zanes-Mac-Studio newfolder % ls
+ first.txt
+ zanestickel@Zanes-Mac-Studio newfolder % cd ..
+ zanestickel@Zanes-Mac-Studio Terminal_testing % ls
+ first.txt	newfolder	second.txt	third.txt
+ zanestickel@Zanes-Mac-Studio Terminal_testing % mv second.txt ./newfolder
+ zanestickel@Zanes-Mac-Studio Terminal_testing % ls
+ first.txt	newfolder	third.txt
+ zanestickel@Zanes-Mac-Studio Terminal_testing % cd newfolder
+ zanestickel@Zanes-Mac-Studio newfolder % ls
+ first.txt	second.txt
+ zanestickel@Zanes-Mac-Studio newfolder % cd ..
+ zanestickel@Zanes-Mac-Studio Terminal_testing % ls
+ first.txt	newfolder	third.txt
+ zanestickel@Zanes-Mac-Studio Terminal_testing % rm third.txt
+ zanestickel@Zanes-Mac-Studio Terminal_testing % rm -r newfolder
+ zanestickel@Zanes-Mac-Studio Terminal_testing % ls
+ first.txt
+ zanestickel@Zanes-Mac-Studio Terminal_testing % vim first.txt
+ zanestickel@Zanes-Mac-Studio Terminal_testing % cat first.txt
+ Some text inside this file using vim
+ zanestickel@Zanes-Mac-Studio Terminal_testing % grep inside first.txt
+ Some text inside this file using vim
+ zanestickel@Zanes-Mac-Studio Terminal_testing %
 
