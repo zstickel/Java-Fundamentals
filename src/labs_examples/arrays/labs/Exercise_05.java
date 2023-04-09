@@ -9,5 +9,13 @@ package labs_examples.arrays.labs;
  */
 
 public class Exercise_05 {
-
+    public static void main(String[] args) {
+        int[] backwardsArray = new int [10];
+        for (int i = 0; i< 10; i++){
+            backwardsArray[i] = i;
+        }
+        for (int i = backwardsArray.length - 1; i> -1; i -= 2){
+            System.out.println(backwardsArray[i]);
+        }
+    }
 }

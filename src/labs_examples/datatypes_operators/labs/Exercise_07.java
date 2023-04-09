@@ -26,6 +26,7 @@ public class Exercise_07 {
         // write completed code here
         double seconds = convertToSeconds(days);
         System.out.println(seconds);
+
     }
     public static double convertToSeconds(int days){
         double numDays = days;

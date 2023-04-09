@@ -1,5 +1,7 @@
 package labs_examples.arrays.labs;
 
+import java.util.ArrayList;
+
 /**
  *  ArrayLists
  *
@@ -10,4 +12,21 @@ package labs_examples.arrays.labs;
  *
  */
 public class Exercise_07 {
+
+    public static void main(String[] args) {
+        ArrayList<Double> nums = new ArrayList<Double>();
+        for (int i = 0; i < 10; i ++){
+            nums.add(Math.random() * (100) + 1);
+        }
+        if (nums.isEmpty()){
+            System.out.println("Array is empty");
+        }else{
+            System.out.println("Array isn't empty");
+        }
+        System.out.println("Array has this many elements: " + nums.size());
+        for (Double num : nums){
+            System.out.println(num);
+        }
+
+    }
 }
