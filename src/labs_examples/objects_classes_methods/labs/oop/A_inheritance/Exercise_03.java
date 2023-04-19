@@ -3,7 +3,8 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
 /**
  * Why does the output print in the order it does?
  *
- * You answer:
+ * You answer: The parent constructor is called before the child constructor. Super is not needed to call the parent
+ * default constructor.
  *
  */
 
