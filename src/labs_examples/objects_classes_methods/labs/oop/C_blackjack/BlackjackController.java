@@ -3,9 +3,18 @@ package labs_examples.objects_classes_methods.labs.oop.C_blackjack;
 import java.util.Scanner;
 
 public class BlackjackController {
+    static int gamesPlayed = 0;
+    static int computerWins = 0;
+
+    static int playerWins = 0;
     public static void main(String[] args) {
         System.out.println("Welcome to Blackjack!");
-        playBlackJack();
+        for (int i =0; i<5; i++) {
+            playBlackJack();
+            System.out.println("Games played: " + gamesPlayed);
+            System.out.println("Computer wins: " + computerWins);
+            System.out.println("Player wins " + playerWins);
+        }
 
     }
     public static void playBlackJack(){
@@ -43,19 +52,26 @@ public class BlackjackController {
         }
         if (userPlayer.hand.bust()){
             System.out.println("User player busted, computer wins!");
+            computerWins++;
+            gamesPlayed++;
             return;
         }
         if (computerPlayer.hand.bust()){
             System.out.println("Computer busted, player wins");
+            playerWins++;
+            gamesPlayed++;
             return;
         }
         if (userPlayer.hand.score() > computerPlayer.hand.score()){
             System.out.println("User player wins!");
+            playerWins++;
         }else if (userPlayer.hand.score() < computerPlayer.hand.score()){
             System.out.println("Computer wins!");
+            computerWins++;
         }else{
             System.out.println("Push. No one wins.");
         }
+        gamesPlayed ++;
     }
 
     public static boolean computerTurn(Player userPlayer, Player computerPlayer, Deck deck){
