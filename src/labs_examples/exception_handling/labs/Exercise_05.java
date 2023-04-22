@@ -12,7 +12,14 @@ import java.util.Arrays;
 class Example {
 
     public static void main(String[] args) {
-
+        try{
+            throwingExample();
+        }catch(Exception e){
+            System.out.println(e.toString());
+        }
+    }
+    public static void throwingExample()throws Exception {
+        throw new Exception("This new exception");
     }
 
 }
