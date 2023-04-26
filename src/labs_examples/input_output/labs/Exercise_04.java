@@ -12,3 +12,10 @@ package labs_examples.input_output.labs;
  *      Then, write the arraylist of objects back out to a new .csv file. Ensure that the resulting csv file is valid.
  *
  */
+
+class Exercise_04 {
+    public static void main(String[] args) {
+        CSVParser parser = new CSVParser("src/labs_examples/input_output/files/aircraft.csv");
+        parser.csvToStringArray();
+    }
+}
