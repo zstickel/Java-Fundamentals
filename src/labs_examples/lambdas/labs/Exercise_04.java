@@ -28,6 +28,8 @@ import java.util.stream.Stream;
  *      
  */
 
-class Example {
-    
+class Example_04 {
+    public static void main(String[] args) {
+        System.out.println("Example 4");
+    }
 }
