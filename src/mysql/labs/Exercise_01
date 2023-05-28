@@ -38,4 +38,32 @@
  *       8.) Export the schema to a dump file and copy it to this folder.
  *
  *
+ MariaDB [college]> SELECT first_name, last_name FROM teachers WHERE subject = 'Math';
+ +------------+-----------+
+ | first_name | last_name |
+ +------------+-----------+
+ | Bob        | Jones     |
+ +------------+-----------+
+ 1 row in set (0.000 sec)
+ MariaDB [college]> INSERT INTO teachers(first_name, last_name, subject) VALUES('Dan','Snyderson','History');
+ Query OK, 1 row affected (0.001 sec)
+
+ MariaDB [college]> SELECT * FROM teachers;
+ +----+------------+-----------+---------+
+ | id | first_name | last_name | subject |
+ +----+------------+-----------+---------+
+ |  1 | Bob        | Jones     | Math    |
+ |  2 | Fred       | Simpson   | Science |
+ |  3 | Dan        | Snyderson | History |
+ +----+------------+-----------+---------+
+ 3 rows in set (0.000 sec)
+
+ MariaDB [college]> SELECT s.first_name,s.last_name,  t.first_name,t.last_name, t.subject FROM students s, teachers t JOIN teachers_students ts WHERE ts.student_id = s.id AND ts.teacher_id = t.id;
+ +------------+-----------+------------+-----------+---------+
+ | first_name | last_name | first_name | last_name | subject |
+ +------------+-----------+------------+-----------+---------+
+ | martin     | breuss    | Fred       | Simpson   | Science |
+ +------------+-----------+------------+-----------+---------+
+ 1 row in set (0.001 sec)
+
  */

@@ -25,4 +25,25 @@
 *
 *   In the next exercise, we'll dig into querying this database.
 *
+
+
+
+CREATE TABLE IF NOT EXISTS flights(flight_number INT AUTO_INCREMENT PRIMARY KEY, aircraft_number INT, departure_number INT, destination_number INT, FOREIGN KEY (aircraft_number) REFERENCES aircraft(aircraft_number), FOREIGN KEY (departure_number) REFERENCES locations(location_number), FOREIGN KEY (destination_number) REFERENCES locations(location_number));
+
+CREATE TABLE IF NOT EXISTS aircraft(aircraft_number INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), type VARCHAR(255), speed INT);
+
+CREATE TABLE IF NOT EXISTS locations(location_number INT AUTO_INCREMENT PRIMARY KEY, city VARCHAR(255), state VARCHAR(255), airport_name VARCHAR(255));
+
+INSERT INTO aircraft(name, type, speed) VALUES ('Wind','B737',400),('Earth','A380',390),('Fire','G550',500),('Granite','B747',480);
+
+INSERT INTO locations(city, state, airport_name) VALUES ('Columbus', 'OH', 'Port Columbus'), ('Arlington', 'VA', 'Reagan'), ('Herndon', 'VA', 'Dulles'), ('Seattle', 'WA', 'SEATAC'),('Baltimore','MD','BWI');
+
+CREATE TABLE IF NOT EXISTS passengers(passenger_number INT AUTO_INCREMENT PRIMARY KEY, first_name VARCHAR(255), last_name VARCHAR(255), flight_number INT, FOREIGN KEY (flight_number) REFERENCES flights(flight_number));
+
+CREATE TABLE IF NOT EXISTS tickets(ticket_number INT AUTO_INCREMENT PRIMARY KEY, passenger_number INT, FOREIGN KEY(passenger_number) REFERENCES passengers(passenger_number));
+
+INSERT INTO flights(aircraft_number, departure_number, destination_number) VALUES (1, 5, 3),(2, 1, 5), (3, 2, 4), (4, 4, 1);
+
+SELECT a.name, a.type, ls.airport_name AS departure, le.airport_name AS destination FROM aircraft a, locations ls, locations le JOIN flights f WHERE f.aircraft_number = 1 AND f.aircraft_number = a.aircraft_number AND f.departure_number = ls.location_number AND f.destination_number = le.location_number;
+SELECT a.name, a.type, ls.airport_name AS departure, le.airport_name AS destination FROM aircraft a, locations ls, locations le JOIN flights f WHERE f.aircraft_number = 2 AND f.aircraft_number = a.aircraft_number AND f.departure_number = ls.location_number AND f.destination_number = le.location_number;
 */
