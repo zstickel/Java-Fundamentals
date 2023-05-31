@@ -1,4 +1,8 @@
 package mysql.labs;
+import mysql.examples.Course;
+
+import java.sql.*;
+import java.util.ArrayList;
 
 
 /*
@@ -42,6 +46,22 @@ public class Exercise_04 {
 
 
          */
+
+        Airline delta = new Airline();
+        Aircraft aircraft = delta.getAircraftByName("Granite");
+        System.out.println(aircraft.printAircraft());
+        System.out.println("Travel time to go 1000 miles:");
+        System.out.println(aircraft.getTravelTime(1000.0));
+        Aircraft f16 = new Aircraft(98,"Falcon","F16",600);
+         Boolean didInsert = delta.insertAircraft(f16);
+         System.out.println(("Was F16 inserted? "));
+        System.out.println(didInsert);
+        String destination = delta.getAircraftDestination("Granite");
+        System.out.println("Aircraft destination: ");
+        System.out.println(destination);
+
+
+
     }
 
 }
